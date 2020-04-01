@@ -12,7 +12,7 @@ Boilerplate for starting new Express Projects
     - `.env` will be ignored by git and used by express locally
 6. Update `name:` in `package.json`
 
-## Script
+## Scripts
 - `npm start`
 - `npm run dev` to start nodemon
 - `npm test`
