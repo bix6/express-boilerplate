@@ -10,7 +10,7 @@ Boilerplate for starting new Express Projects
 4. `npm install`
 5. Move `example.env` to `.env` with `mv example.env .env`
     - `.env` will be ignored by git and used by express locally
-6. Update `name:` in `package.json`
+6. Update `name` and `description` in `package.json`
 
 ## Scripts
 - `npm start`
