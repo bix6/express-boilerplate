@@ -11,12 +11,9 @@ Boilerplate for starting new Express Projects
 5. `mv example.env .env` move `example.env` to `.env`
     - `.env` will be ignored by git and used by express locally
 6. Update `name` and `description` in `package.json`
-- Add `API_TOKEN=1234` to `.env` if using API Key
-
-## Additional Setup
-- Logger
-- `const logger = require('./logger');` to use Winston logger
-- `logger.error('Error Message');` to log something
+7. Update `README.md`
+8. Add `API_TOKEN` to `.env`
+9. Delete `example-router` and `example-store` if not needed
 
 ## Scripts
 - `npm start`
