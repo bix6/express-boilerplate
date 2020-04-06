@@ -11,8 +11,13 @@ Boilerplate for starting new Express Projects
 5. `mv example.env .env` move `example.env` to `.env`
     - `.env` will be ignored by git and used by express locally
 6. Update `name` and `description` in `package.json`
+- Add `API_TOKEN=1234` to `.env` if using API Key
 
-- `const logger = require('./logger`);` to use Winston logger
+## Additional Setup
+- Logger
+- `const logger = require('./logger');` to use Winston logger
+- `logger.error('Error Message');` to log something
+
 ## Scripts
 - `npm start`
 - `npm run dev` to start nodemon
