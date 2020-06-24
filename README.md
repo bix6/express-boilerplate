@@ -12,7 +12,7 @@ Boilerplate for starting new Express Projects
 - Update `name` and `description` in `package.json`
 - Update Readme
 - `npm install`
-- `pg` 8 breaks Heroku
+- Confirm `pg` version below 8 in `package.json` because pg 8 breaks Heroku
   - `npm uninstall pg --save`
   - `npm install pg@7.18.2`
     - [Check Versions](https://www.npmjs.com/package/pg)
@@ -23,12 +23,25 @@ Boilerplate for starting new Express Projects
 
 ## Database Setup
 
-- Draw ERD
-- Create migrations
-- `CREATE DATABASE name WITH OWNER "user_name";`
-  - Also create `name-test` db
-- `npm i postgrator-cli@3.2.0 -D`
-  - To avoid Windows issues (asks for password otherwise)
+- Draw Entity Relationship Diagram (ERD)
+- Create migrations in `migrations/`
+- `pg_ctl restart` restart postgres
+  - Windows has a lot of funky issues with pg; sometimes I need to run this command many times to get it to restart
+- `createuser -Pw --interactive` (from powershell) to create a db user if needed
+  - Can also use `CREATE ROLE`
+- Two ways to create the Database:
+  - `createdb -U user_name database_name` from powershell
+  - `CREATE DATABASE name WITH OWNER "user_name";` from psql
+  - Also create `database_name_test` db
+- `psql -U user_name database_name` login to psql
+- psql commands
+  - `\du` define users
+  - `\l` list databases
+  - `\c db_name` connect to db
+  - `\dt` define tables in current db
+- Confirm postgrator 3.2.0 in `package.json` (later versions cause issues with Windows)
+  - `npm uninstall postgrator-cli --save-dev`
+  - `npm i postgrator-cli@3.2.0 -D`
 - Update `API_Token`, `DB_URL` and `TEST_DB_URL` in `.env`
 - Start the db and try:
   - `npm run migrate` to migrate all the way up
