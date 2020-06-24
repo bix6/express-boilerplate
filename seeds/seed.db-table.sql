@@ -1,5 +1,8 @@
 BEGIN;
 
+-- cleanup
+TRUNCATE notes, folders RESTART IDENTITY CASCADE;
+
 INSERT INTO folders (name)
 VALUES
     ('Important'),
