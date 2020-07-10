@@ -84,6 +84,7 @@ Boilerplate for starting new Express Projects
 - `heroku apps:rename newName`
 - `heroku config:set API_TOKEN=tokenString`
   - Can now send a request to the URL from `heroku open` with Postman to verify the authorization works
+- `heroku config:set CLIENT_ORIGIN=originURL`
 - `heroku addons:create heroku-postgresql:hobby-dev`
 - `heroku pg:credentials:url` to get DB credentials
 - `npm run predeploy` to audit packages
