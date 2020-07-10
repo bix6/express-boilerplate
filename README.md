@@ -46,7 +46,7 @@ Boilerplate for starting new Express Projects
 - Confirm postgrator 3.2.0 in `package.json` (later versions cause issues with Windows)
   - `npm uninstall postgrator-cli --save-dev`
   - `npm i postgrator-cli@3.2.0 -D`
-- Update `API_Token`, `DB_URL` and `TEST_DB_URL` in `.env`
+- Update `API_Token`, `DATABASE_URL` and `TEST_DATABASE_URL` in `.env`
 - Start the db and try:
   - `npm run migrate` to migrate all the way up
   - `npm run migrate -- 0` to migrate all the way down (or to any step)
@@ -75,8 +75,26 @@ Boilerplate for starting new Express Projects
 - `npm run migrate` or `npm run migrate -- 0`
 - `npm run migrate:test` to migrate the test db
 
-## Deploying
+## Deploying To Heroku
 
+- `cd` into project folder
+- Run `node --version` in the console and then set the node version in `package.json` in the engines section; this ensures we use the same node locally and on heroku
+- `heroku login` from PowerShell (Git Bash won't work)
 - `heroku create`
+- `heroku apps:rename newName`
+- `heroku config:set API_TOKEN=tokenString`
+  - Can now send a request to the URL from `heroku open` with Postman to verify the authorization works
+- `heroku addons:create heroku-postgresql:hobby-dev`
+- `heroku pg:credentials:url` to get DB credentials
 - `npm run predeploy` to audit packages
-- `npm run deploy` to push to Heroku repo
+- `npm run deploy` to push to Heroku repo; also runs the predeploy
+- `heroku open` to open in browser
+
+## Cookies
+
+- `npm i cookie-parser`
+- In `app.js`
+  - `const cookieParser = require('cookie-parser')`
+  - `app.use(cookieParser())`
+- Then set a cookie on a response:
+  - `res.cookie('key', 'value').send('sending a response')`
