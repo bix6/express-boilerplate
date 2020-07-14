@@ -99,3 +99,9 @@ Boilerplate for starting new Express Projects
   - `app.use(cookieParser())`
 - Then set a cookie on a response:
   - `res.cookie('key', 'value').send('sending a response')`
+- TODO this seems to work fine; having issues accessing the cookie on the client side
+
+## WebSockets (Socket.io)
+
+- [socket-example repo](https://github.com/bix6/socket-example)
+- Uncomment in `server.js` to enable sockets
