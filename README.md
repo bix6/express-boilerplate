@@ -87,21 +87,14 @@ Boilerplate for starting new Express Projects
 - `heroku config:set CLIENT_ORIGIN=originURL`
 - `heroku addons:create heroku-postgresql:hobby-dev`
 - `heroku pg:credentials:url` to get DB credentials
+  - Can use these to login with DBeaver (top left; new connection)
+  - Must run this command from the project directory
 - `npm run predeploy` to audit packages
 - `npm run deploy` to push to Heroku repo; also runs the predeploy
 - `heroku open` to open in browser
 
-## Cookies
-
-- `npm i cookie-parser`
-- In `app.js`
-  - `const cookieParser = require('cookie-parser')`
-  - `app.use(cookieParser())`
-- Then set a cookie on a response:
-  - `res.cookie('key', 'value').send('sending a response')`
-- TODO this seems to work fine; having issues accessing the cookie on the client side
-
 ## WebSockets (Socket.io)
 
 - [socket-example repo](https://github.com/bix6/socket-example)
-- Uncomment in `server.js` to enable sockets
+- See [music-chat](https://github.com/bix6/music-chat)
+  - Implementation with Node and React
