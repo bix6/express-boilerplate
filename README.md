@@ -55,9 +55,9 @@ Boilerplate for starting new Express Projects
     - `\dt`define tables in current db
     - `\d+ table_name` define individual table
 - Seed the db
-  - Update `seeds`
+  - Update `seeds/`
   - Change to db in psql with `\c dbname`
-  - Run seed file `\i C:/Path/To/File/seeds/seed.db.sql`
+  - Run seed file `\i ~/Path/To/File/seeds/seed.db.sql`
 - Create service objects (this is the example included with the boilerplate)
   - Create `folders-endpoints.spec.js` and `folders.fixtures.js` for tests
     - Create an initial test that fails
